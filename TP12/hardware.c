@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 #include "hardware.h"
 
 FILE * archivo;
@@ -15,6 +16,7 @@ void Initialization (){
 		fprintf (archivo, mapeo [i]);
 		fclose (archivo);
 	}
+	sleep (3);
 	for (i = 0; i < 8; i++){
 		char npin [MAX];
 		char arr [MAX];
