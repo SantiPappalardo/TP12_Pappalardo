@@ -6,12 +6,15 @@ FILE * archivo;
 int mapeo [8] = {17, 4 , 19, 23, 24, 25, 22, 27};
 
 void Initialization (){
-	if ((archivo = fopen("/sys/class/gpio/export", "w")) == NULL){
-		puts ("No es posible acceder al archivo deseado\n");
-		exit (1);
-	}
-	fclose (archivo);
 	int i;
+	for (i = 0; i < 8; i++){
+		if ((archivo = fopen("/sys/class/gpio/export", "w")) == NULL){
+			puts ("No es posible acceder al archivo deseado\n");
+			exit (1);
+		}
+		fprintf (archivo, mapeo [i]);
+		fclose (archivo);
+	}
 	for (i = 0; i < 8; i++){
 		char npin [MAX];
 		char arr [MAX];
