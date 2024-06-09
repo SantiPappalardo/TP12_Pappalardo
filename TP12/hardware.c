@@ -16,7 +16,7 @@ void Initialization (){
 		fprintf (archivo, mapeo [i]);
 		fclose (archivo);
 	}
-	sleep (3);
+	sleep (1);
 	for (i = 0; i < 8; i++){
 		char npin [MAX];
 		char arr [MAX];
