@@ -14,19 +14,18 @@ void Initialization (){
 			exit (1);
 		}
 		fprintf (archivo, mapeo [i]);
-		fclose (archivo);
 	}
 	sleep (1);
 	for (i = 0; i < 8; i++){
-		char npin [MAX];
 		char arr [MAX];
+		/*char npin [MAX];
 		int export_tool;
 		snprintf (npin, MAX, "%d", mapeo [i]);
 		export_tool = fputs (npin, archivo);
 		if (export_tool == -1){
 			printf ("No es posible exportar el pin nro %d\n", mapeo [i]);
 			exit (1);
-		}
+		}*/
 		snprintf (arr, MAX, "sys/class/gpio/gpio%d/direction", mapeo [i]);
 		if ((archivo = fopen (arr, "w")) == NULL){
 			puts ("No es posible abrir la direccion del archivo deseado\n");
