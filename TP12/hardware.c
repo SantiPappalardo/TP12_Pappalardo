@@ -4,7 +4,7 @@
 #include "hardware.h"
 
 FILE * archivo;
-int mapeo [8] = {17, 4 , 19, 23, 24, 25, 22, 27};
+int mapeo [8] = {17, 4 , 18, 23, 24, 25, 22, 27};
 
 void Initialization (){
 	int i;
@@ -14,14 +14,12 @@ void Initialization (){
 			exit (1);
 		}
 		fprintf (archivo, mapeo [i]);
-	}
-	sleep (1);
-	for (i = 0; i < 8; i++){
+		sleep (1);
+		char npin [MAX];
 		char arr [MAX];
-		/*char npin [MAX];
 		int export_tool;
 		snprintf (npin, MAX, "%d", mapeo [i]);
-		export_tool = fputs (npin, archivo);
+		/*export_tool = fputs (npin, archivo);
 		if (export_tool == -1){
 			printf ("No es posible exportar el pin nro %d\n", mapeo [i]);
 			exit (1);
